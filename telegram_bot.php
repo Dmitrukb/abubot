@@ -6,7 +6,7 @@ $data = json_decode(file_get_contents('php://input'), TRUE);
 
 $data = $data['callback_query'] ? $data['callback_query'] : $data['message'];
 
-define('TOKEN', 'Ваш токен');
+define('TOKEN', '5164474301:AAF6HBPHnz1GmBSVla55GvjVoU4cfZHmqpI');
 
 $message = mb_strtolower(($data['text'] ? $data['text'] : $data['data']),'utf-8');
 
