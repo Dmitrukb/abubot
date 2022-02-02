@@ -2,12 +2,13 @@
 
 $data = json_decode(file_get_contents('php://input'), TRUE);
 //пишем в файл лог сообщений
-//file_put_contents('file.txt', '$data: '.print_r($data, 1)."\n", FILE_APPEND);
+file_put_contents('file.txt', '$data: '.print_r($data, 1)."\n", FILE_APPEND);
+//https://api.telegram.org/5164474301:AAF6HBPHnz1GmBSVla55GvjVoU4cfZHmqpI/setwebhook?url=https://dmitrukb.github.io/abubot/telegram_bot.php
 
 $data = $data['callback_query'] ? $data['callback_query'] : $data['message'];
 
 define('TOKEN', '5164474301:AAF6HBPHnz1GmBSVla55GvjVoU4cfZHmqpI');
-https://api.telegram.org/5164474301:AAF6HBPHnz1GmBSVla55GvjVoU4cfZHmqpI/setwebhook?url=https://dmitrukb.github.io/abubot/telegram_bot.php
+
 
 $message = mb_strtolower(($data['text'] ? $data['text'] : $data['data']),'utf-8');
 
